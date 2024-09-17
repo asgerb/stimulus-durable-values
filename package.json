@@ -1,6 +1,6 @@
 {
   "name": "stimulus-durable-values",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A stimulus blessing for durable values",
   "main": "index.js",
   "repository": "https://github.com/asgerb/stimulus-durable-values",
