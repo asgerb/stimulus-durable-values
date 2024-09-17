@@ -3,7 +3,7 @@
 ```
 import { Application } from "@hotwired/stimulus"
 import { Controller } from "@hotwired/stimulus"
-import { DurableValuePropertiesBlessing } from "@asgerb/stimulus-durable-values"
+import { DurableValuePropertiesBlessing } from "stimulus-durable-values"
 
 Controller.blessings.push(DurableValuePropertiesBlessing)
 
