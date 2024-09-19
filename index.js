@@ -13,6 +13,7 @@ export function DurableValuePropertiesBlessing(constructor) {
   definitions.forEach((name) => {
     const key = camelize(`${name}Value`)
     const changedMethodName = `${key}Changed`
+    const originalChangedMethod = constructor.prototype[changedMethodName]
 
     properties[key] = {
       get() {
@@ -29,6 +30,9 @@ export function DurableValuePropertiesBlessing(constructor) {
     constructor.prototype[changedMethodName] = function () {
       if (this.durableValues && this.durableValues[key] !== this[key]) {
         this[key] = this.durableValues[key]
+      }
+      if (typeof originalChangedMethod === "function") {
+        originalChangedMethod.call(this)
       }
     }
   })
